@@ -29,6 +29,7 @@
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v9/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html,
@@ -281,6 +282,7 @@ body {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  z-index: 1;
 }
 .carousel .left-button:hover,
 .carousel .right-button:hover {
@@ -291,14 +293,20 @@ body {
 .carousel .left-button {
   top: 50%;
   left: 25px;
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 .carousel .right-button {
   top: 50%;
   right: 25px;
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 .carousel img {
   width: 100%;
-  display: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0.3s, opacity 0.3s linear;
+  transition: visibility 0.3s, opacity 0.3s linear;
 }

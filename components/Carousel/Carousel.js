@@ -14,7 +14,8 @@ class Carousel {
     this.index = 0;
 
     // display the current image
-    this.images[this.index].style.display = 'block';
+    this.images[this.index].style.visibility = 'visible';
+    this.images[this.index].style.opacity = 1;
 
     // add click handlers to the buttons
     this.leftBtn.addEventListener('click', () => this.slideLeft());
@@ -23,24 +24,30 @@ class Carousel {
 
   slideLeft () {
     // hide the current image
-    this.images[this.index].style.display = 'none';
+    this.images[this.index].style.visibility = 'hidden';
+    this.images[this.index].style.opacity = 0;
 
     // cycle the index
     this.index = this.index === 0 ? this.images.length - 1 : --this.index;
 
     // display the new image
-    this.images[this.index].style.display = 'block';
+    this.images[this.index].style.visibility = 'visible';
+    this.images[this.index].style.opacity = 1;
   }
 
   slideRight () {
     // hide the current image
-    this.images[this.index].style.display = 'none';
+    this.images[this.index].style.visibility = 'hidden';
+    this.images[this.index].style.opacity = 0;
 
     // cycle the index
     this.index = this.index === this.images.length - 1 ? 0 : ++this.index;
 
-    // display the new image
-    this.images[this.index].style.display = 'block';
+    // display the new image - leaving the setTimeout here to see the transition differences between the two buttons
+    setTimeout(() => {
+      this.images[this.index].style.visibility = 'visible';
+      this.images[this.index].style.opacity = 1;
+    }, 300)
   }
 }
 

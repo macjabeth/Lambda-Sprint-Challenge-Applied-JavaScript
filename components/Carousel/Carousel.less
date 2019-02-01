@@ -18,6 +18,7 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    z-index: 1;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
@@ -25,17 +26,23 @@
     }
   }
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   img {
     .width-100();
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
 }
