@@ -18,6 +18,7 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    z-index: 1;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
@@ -25,17 +26,117 @@
     }
   }
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   img {
     .width-100();
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes rightslidein {
+  from {
+    left: 1200px;
+    visibility: hidden;
+  }
+
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+
+@keyframes rightslidein {
+  from {
+    left: 1200px;
+    visibility: hidden;
+  }
+
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes rightslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+
+  to {
+    left: -1200px;
+    visibility: hidden;
+  }
+}
+
+@keyframes rightslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+
+  to {
+    left: -1200px;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes leftslidein {
+  from {
+    left: -1200px;
+    visibility: hidden;
+  }
+
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+
+@keyframes leftslidein {
+  from {
+    left: -1200px;
+    visibility: hidden;
+  }
+
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes leftslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+
+  to {
+    left: 1200px;
+    visibility: hidden;
+  }
+}
+
+@keyframes leftslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+
+  to {
+    left: 1200px;
+    visibility: hidden;
   }
 }
