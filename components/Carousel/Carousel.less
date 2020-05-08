@@ -31,112 +31,35 @@
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
+
   .right-button {
     top: 50%;
     right: 25px;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
+
   img {
     .width-100();
-    position: absolute;
-    visibility: hidden;
-    opacity: 0.8;
+    display: none;
+    animation-duration: 250ms;
   }
 }
 
-@-webkit-keyframes rightslidein {
+@keyframes fadeOut {
   from {
-    left: 1200px;
-    visibility: hidden;
+    opacity: 100
   }
-
   to {
-    left: 0px;
-    visibility: visible;
+    opacity: 0
   }
 }
 
-@keyframes rightslidein {
+@keyframes fadeIn {
   from {
-    left: 1200px;
-    visibility: hidden;
+    opacity: 0
   }
-
   to {
-    left: 0px;
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes rightslideout {
-  from {
-    left: 0;
-    visibility: visible;
-  }
-
-  to {
-    left: -1200px;
-    visibility: hidden;
-  }
-}
-
-@keyframes rightslideout {
-  from {
-    left: 0;
-    visibility: visible;
-  }
-
-  to {
-    left: -1200px;
-    visibility: hidden;
-  }
-}
-
-@-webkit-keyframes leftslidein {
-  from {
-    left: -1200px;
-    visibility: hidden;
-  }
-
-  to {
-    left: 0px;
-    visibility: visible;
-  }
-}
-
-@keyframes leftslidein {
-  from {
-    left: -1200px;
-    visibility: hidden;
-  }
-
-  to {
-    left: 0px;
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes leftslideout {
-  from {
-    left: 0;
-    visibility: visible;
-  }
-
-  to {
-    left: 1200px;
-    visibility: hidden;
-  }
-}
-
-@keyframes leftslideout {
-  from {
-    left: 0;
-    visibility: visible;
-  }
-
-  to {
-    left: 1200px;
-    visibility: hidden;
+    opacity: 100
   }
 }
