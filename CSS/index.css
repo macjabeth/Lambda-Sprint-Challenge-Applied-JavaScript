@@ -29,6 +29,7 @@
   src: local('PT Sans Bold'), local('PTSans-Bold'), url(https://fonts.gstatic.com/s/ptsans/v11/jizfRExUiTo99u79B_mh0O6tKA.ttf) format('truetype');
 }
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html,
@@ -282,6 +283,7 @@ body {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  z-index: 1;
 }
 .carousel .left-button:hover,
 .carousel .right-button:hover {
@@ -292,12 +294,14 @@ body {
 .carousel .left-button {
   top: 50%;
   left: 25px;
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
 .carousel .right-button {
   top: 50%;
   right: 25px;
+  -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
@@ -305,6 +309,86 @@ body {
   animation-duration: 250ms;
   display: none;
   width: 100%;
+}
+@-webkit-keyframes rightslidein {
+  from {
+    left: 1200px;
+    visibility: hidden;
+  }
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+@keyframes rightslidein {
+  from {
+    left: 1200px;
+    visibility: hidden;
+  }
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+@-webkit-keyframes rightslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+  to {
+    left: -1200px;
+    visibility: hidden;
+  }
+}
+@keyframes rightslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+  to {
+    left: -1200px;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes leftslidein {
+  from {
+    left: -1200px;
+    visibility: hidden;
+  }
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+@keyframes leftslidein {
+  from {
+    left: -1200px;
+    visibility: hidden;
+  }
+  to {
+    left: 0px;
+    visibility: visible;
+  }
+}
+@-webkit-keyframes leftslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+  to {
+    left: 1200px;
+    visibility: hidden;
+  }
+}
+@keyframes leftslideout {
+  from {
+    left: 0;
+    visibility: visible;
+  }
+  to {
+    left: 1200px;
+    visibility: hidden;
+  }
 }
 
 @keyframes fadeOut {

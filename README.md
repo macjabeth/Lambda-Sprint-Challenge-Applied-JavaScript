@@ -38,6 +38,8 @@ Edit this document to include your answers after each question. Make sure to lea
 
 5. **What is a component?** A piece of reusable code comprised of HTML, CSS and JavaScript.
 
+Components are reusable pieces of code that can be used to build elements sharing functionality and styling. They are comprised of HTML, CSS and JavaScript.
+
 ### Git Set up
 
 * Fork the project into your GitHub user account
