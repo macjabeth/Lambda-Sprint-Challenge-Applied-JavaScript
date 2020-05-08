@@ -29,13 +29,34 @@
     left: 25px;
     transform: translate(0, -50%);
   }
+
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
     transform: translate(0, -50%);
   }
+
   img {
     .width-100();
     display: none;
+    animation-duration: 250ms;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 100
+  }
+  to {
+    opacity: 0
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 100
   }
 }

@@ -33,11 +33,14 @@ function Carousel(imagePaths) {
   const images = imagePaths.map(imagePath => {
     const img = document.createElement('img');
     img.src = imagePath;
+    img.addEventListener('animationend', () => {
+      img.style.animationName = '';
+    });
     return img;
   });
 
   // create structure
-  carousel.append(leftBtn, ...images, rightBtn);
+  carousel.append(...images, leftBtn, rightBtn);
 
   // add attributes and data
   carousel.classList.add('carousel');
@@ -50,15 +53,23 @@ function Carousel(imagePaths) {
   let index = 0;
 
   rightBtn.addEventListener('click', () => {
-    images[index].style.display = 'none';
-    if (++index === images.length) index = 0;
-    images[index].style.display = 'block';
+    images[index].style.animationName = 'fadeOut';
+    setTimeout(() => {
+      images[index].style.display = 'none';
+      if (++index === images.length) index = 0;
+      images[index].style.animationName = 'fadeIn';
+      images[index].style.display = 'block';
+    }, 250);
   });
 
   leftBtn.addEventListener('click', () => {
-    images[index].style.display = 'none';
-    if (--index === -1) index = images.length - 1;
-    images[index].style.display = 'block';
+    images[index].style.animationName = 'fadeOut';
+    setTimeout(() => {
+      images[index].style.display = 'none';
+      if (--index === -1) index = images.length - 1;
+      images[index].style.animationName = 'fadeIn';
+      images[index].style.display = 'block';
+    }, 250);
   });
 
   images[index].style.display = 'block';
