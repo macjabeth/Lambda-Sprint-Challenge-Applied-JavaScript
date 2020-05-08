@@ -53,7 +53,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     const { articles } = response.data;
     for (const articlesKey in articles) {
       for (const articleData of articles[articlesKey]) {
-        cardsContainer.append(Card(articleData));
+        const card = Card(articleData);
+        card.dataset.topic = articlesKey;
+        cardsContainer.append(card);
       }
     }
   });

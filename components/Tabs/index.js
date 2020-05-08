@@ -15,6 +15,17 @@ function Tab(topic) {
   // add attributes and data
   tab.classList.add('tab');
   tab.textContent = topic;
+  tab.dataset.topic = topic === 'node.js' ? 'node' : topic;
+
+  // handle functionality
+  tab.addEventListener('click', () => {
+    const cards = document.getElementsByClassName('card');
+    for (const card of cards) {
+      card.style.display = (card.dataset.topic === tab.dataset.topic || topic === 'all')
+        ? 'flex'
+        : 'none';
+    }
+  });
 
   // return tab component
   return tab;
@@ -24,6 +35,7 @@ const topics = document.querySelector('div.topics');
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
   .then(response => {
+    topics.append(Tab('all'));
     response.data.topics.forEach(topic => {
       topics.append(Tab(topic));
     });
